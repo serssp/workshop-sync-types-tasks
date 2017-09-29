@@ -1,4 +1,4 @@
-package fgbank;
+package stack;
 
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class FunctionalTest {
 
     @Test
     public void test() {
-        fgbank.Stack myStack = new StackImpl();
+        stack.Stack myStack = new StackImpl();
         Stack<Integer> javaStack = new Stack<>();
         for (int i = 0; i < 1_000_000; i++) {
             int op = R.nextInt(2);

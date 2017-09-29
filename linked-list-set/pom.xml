@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>mpp</groupId>
-    <artifactId>stack</artifactId>
+    <artifactId>linked-list-set</artifactId>
     <version>2017</version>
     <packaging>jar</packaging>
 

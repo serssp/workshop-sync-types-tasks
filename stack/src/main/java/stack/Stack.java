@@ -1,4 +1,4 @@
-package fgbank;
+package stack;
 
 import java.util.EmptyStackException;
 

@@ -1,4 +1,4 @@
-package fgbank;
+package stack;
 
 
 import com.devexperts.dxlab.lincheck.LinChecker;

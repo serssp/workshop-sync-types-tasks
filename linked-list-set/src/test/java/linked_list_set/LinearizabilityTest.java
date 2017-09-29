@@ -1,8 +1,7 @@
-package fgbank;
+package linked_list_set;
 
 
 import com.devexperts.dxlab.lincheck.LinChecker;
-import com.devexperts.dxlab.lincheck.annotations.HandleExceptionAsResult;
 import com.devexperts.dxlab.lincheck.annotations.Operation;
 import com.devexperts.dxlab.lincheck.annotations.Param;
 import com.devexperts.dxlab.lincheck.annotations.Reset;
@@ -10,27 +9,30 @@ import com.devexperts.dxlab.lincheck.paramgen.IntGen;
 import com.devexperts.dxlab.lincheck.stress.StressCTest;
 import org.junit.Test;
 
-import java.util.EmptyStackException;
 
-
+@Param(name = "key", gen = IntGen.class, conf = "1:5")
 @StressCTest
 public class LinearizabilityTest {
-    private Stack stack;
+    private Set set;
 
     @Reset
     public void reset() {
-        stack = new StackImpl();
+        set = new SetImpl();
     }
 
-    @Operation
-    public void push(@Param(gen = IntGen.class) int x) {
-        stack.push(x);
+    @Operation(params = "key")
+    public boolean add(int x) {
+        return set.add(x);
     }
 
-    @HandleExceptionAsResult(EmptyStackException.class)
-    @Operation
-    public int pop() {
-        return stack.pop();
+    @Operation(params = "key")
+    public boolean contains(int x) {
+        return set.contains(x);
+    }
+
+    @Operation(params = "key")
+    public boolean remove(int x) {
+        return set.remove(x);
     }
 
     @Test

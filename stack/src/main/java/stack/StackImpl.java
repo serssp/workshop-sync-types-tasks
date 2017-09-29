@@ -1,4 +1,4 @@
-package fgbank;
+package stack;
 
 import java.util.EmptyStackException;
 
@@ -7,7 +7,7 @@ public class StackImpl implements Stack {
         Node next;
         int x;
 
-        public Node(int x, Node next) {
+        Node(int x, Node next) {
             this.next = next;
             this.x = x;
         }
